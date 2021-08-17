@@ -1,0 +1,33 @@
+@import "../../scss/mixins";
+
+.horizontal-chart {
+  @include Chart;
+
+  .chart {
+    .label-value {
+      @include flexRowCenter;
+      @apply justify-between mb-2;
+    }
+    .track {
+      @apply rounded-full relative;
+      width: 352px;
+      height: 12px;
+      background-color: #f7e8e5;
+
+      .progress {
+        @apply bg-secondary rounded-full absolute z-10 left-0 top-0;
+        height: 12px;
+        width: 200px;
+      }
+    }
+
+    .x-tag {
+      @include flexRowCenter;
+      @apply justify-between ml-16;
+
+      p {
+        @apply text-xs text-primary font-normal;
+      }
+    }
+  }
+}

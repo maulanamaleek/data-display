@@ -1,0 +1,53 @@
+@import "../../scss/mixins";
+
+.table-container {
+  @apply w-full mt-8;
+
+  table {
+    @apply w-full;
+    border-collapse: separate;
+    border-spacing: 0 1em;
+
+    .check {
+      width: fit-content;
+    }
+
+    th,
+    td {
+      text-align: left;
+    }
+
+    tr {
+      width: 100%;
+    }
+
+    td {
+      @apply border-t border-b border-grey;
+
+      &:first-child {
+        @apply border-l;
+      }
+      &:last-child {
+        @apply border-r;
+      }
+    }
+
+    th:first-child,
+    td:first-child {
+      @apply pl-10;
+      border-radius: 12px 0 0 12px;
+    }
+    th:last-child,
+    td:last-child {
+      @apply pr-10;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .table-card {
+      @apply rounded-xl;
+      margin-bottom: 20px;
+      height: 80px;
+      background-color: white;
+    }
+  }
+}

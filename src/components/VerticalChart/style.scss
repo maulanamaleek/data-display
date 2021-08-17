@@ -1,0 +1,44 @@
+@import "../../scss/mixins";
+
+.vertical-chart {
+  @include Chart;
+
+  .chart {
+    @include flexRowCenter;
+    @apply ml-5 mb-5 justify-between;
+    align-items: flex-end !important;
+
+    .bar-1 {
+      @apply rounded-full;
+      width: 18px;
+      background-color: #c2d9d7;
+    }
+
+    .bar-2 {
+      @apply rounded-full bg-primary;
+      width: 18px;
+    }
+  }
+
+  .label {
+    @include flexRowCenter;
+    @apply ml-5;
+
+    & > div {
+      @include miniCircle;
+      margin-right: 10px;
+    }
+
+    p {
+      margin-right: 20px;
+    }
+
+    .c-1 {
+      background-color: #c2d9d7;
+    }
+
+    .c-2 {
+      @apply bg-primary;
+    }
+  }
+}

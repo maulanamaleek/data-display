@@ -1,0 +1,51 @@
+@import "../../scss/mixins";
+
+.circular-chart {
+  @include Chart;
+
+  .chart {
+    @include flexRowCenter;
+    justify-content: center;
+    .progress {
+      @include flexRowCenter;
+      @apply rounded-full justify-center text-secondary font-bold text-lg mr-16;
+      width: 180px;
+      height: 180px;
+      border: 20px solid orange;
+    }
+
+    .label {
+      & > div {
+        @apply flex flex-row items-start;
+
+        .c-1,
+        .c-2 {
+          @include miniCircle;
+          margin-right: 10px;
+          margin-top: 3px;
+        }
+
+        .c-1 {
+          background-color: #f7e8e5;
+        }
+
+        .c-2 {
+          @apply bg-secondary;
+        }
+
+        p {
+          @apply text-left;
+        }
+
+        .title {
+          font-size: 15px;
+        }
+
+        .data {
+          font-size: 15px;
+          color: #566376;
+        }
+      }
+    }
+  }
+}

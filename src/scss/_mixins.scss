@@ -1,0 +1,27 @@
+@mixin Chart {
+  @apply border border-grey px-5 py-5 rounded-xl;
+  width: 440px;
+  min-width: 440px;
+  height: 300px;
+  background-color: white;
+
+  h1 {
+    @apply text-lg font-bold text-left mb-5;
+  }
+}
+
+@mixin flexRowCenter {
+  @apply flex flex-row items-center;
+}
+
+@mixin miniCircle {
+  @apply rounded-full;
+  width: 14px;
+  height: 14px;
+}
+
+@mixin containerLg {
+  @apply mx-auto my-0 pt-6;
+  width: 75vw;
+  height: 100%;
+}

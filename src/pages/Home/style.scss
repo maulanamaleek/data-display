@@ -1,0 +1,15 @@
+@import "../../scss/mixins";
+
+.home {
+  @include containerLg;
+
+  .page-title {
+    @apply font-semibold text-left mt-6 mb-4;
+    font-size: 32px;
+  }
+
+  .charts-list {
+    @include flexRowCenter;
+    justify-content: space-between;
+  }
+}

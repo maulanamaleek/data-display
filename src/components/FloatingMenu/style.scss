@@ -1,0 +1,29 @@
+@import "../../scss/mixins";
+
+.floating-menu {
+  @include flexRowCenter;
+  @apply border border-grey justify-between px-5 shadow-md rounded-xl fixed bottom-8 left-1/2 z-20;
+  width: 534px;
+  height: 68px;
+  transform: translateX(-50%);
+  background-color: white;
+
+  p {
+    @apply text-lg;
+  }
+
+  button {
+    @apply flex flex-row items-center justify-between px-3 py-2 rounded-xl text-xs;
+
+    img {
+      @apply mr-2;
+    }
+  }
+
+  .assign-btn {
+    @apply bg-primary text-white;
+  }
+  .delete-btn {
+    @apply bg-error  text-white;
+  }
+}
