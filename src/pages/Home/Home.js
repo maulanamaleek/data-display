@@ -104,6 +104,8 @@ export default class Home extends Component {
                 console.log('checked')
             }
         });
+
+        this.setState({selected: 0})
     }
 
     render() {
