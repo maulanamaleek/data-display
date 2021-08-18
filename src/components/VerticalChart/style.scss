@@ -8,6 +8,10 @@
     @apply ml-5 mb-5 justify-between relative overflow-hidden;
     align-items: flex-end !important;
 
+    @media (max-width: 500px) {
+      @apply ml-0;
+    }
+
     .bar-1,
     .bar-2 {
       @apply relative bottom-0;

@@ -3,10 +3,20 @@
 .table-container {
   @apply w-full mt-8;
 
+  @media (max-width: 500px) {
+    @apply overflow-x-scroll;
+    width: 90vw;
+  }
+
   table {
     @apply w-full;
     border-collapse: separate;
     border-spacing: 0 1em;
+
+    @media (max-width: 500px) {
+      // @apply overflow-x-scroll;
+      width: 1000px;
+    }
 
     .check {
       width: fit-content;

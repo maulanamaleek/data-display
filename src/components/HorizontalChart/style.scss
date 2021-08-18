@@ -13,6 +13,9 @@
       width: 352px;
       height: 12px;
       background-color: #f7e8e5;
+      @media (max-width: 500px) {
+        width: 60vw;
+      }
 
       .progress {
         @apply bg-secondary rounded-full absolute z-10 left-0 top-0;

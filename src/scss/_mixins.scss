@@ -8,6 +8,12 @@
   h1 {
     @apply text-lg font-bold text-left mb-5;
   }
+
+  @media (max-width: 500px) {
+    width: 90vw;
+    min-width: 90vw;
+    margin-bottom: 20px;
+  }
 }
 
 @mixin flexRowCenter {
@@ -24,4 +30,8 @@
   @apply mx-auto my-0 pt-6;
   width: 75vw;
   height: 100%;
+
+  @media (max-width: 500px) {
+    width: 90vw;
+  }
 }

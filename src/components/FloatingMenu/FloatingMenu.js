@@ -14,11 +14,11 @@ const FloatingMenu = ({selected, isShow, toggle, deleteItem}) => {
             <p>{selected} Table{selected > 1 ? 's' : ''} selected</p>
             <button className="assign-btn">
                 <img src={LabelIcon} alt="label" />
-                Assign Category
+                <span>Assign Category</span>
             </button>
             <button onClick={deleteItem} className="delete-btn">
                 <img src={DeleteIcon} alt="delete" />
-                Delete Table
+                <span>Delete Table</span>
             </button>
         </div>
     )

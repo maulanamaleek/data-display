@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './style.scss'
 
 const HorizontalChart = ({title, data}) => {
+    const [isMobile, setIsMobile] = useState(false)
+    const currentWidth = window.innerWidth;
+
+    useEffect(() => {
+        if (currentWidth < 500) setIsMobile(true)
+        window.addEventListener('resize', () => {
+            if (currentWidth <= 500) setIsMobile(true)
+            if (currentWidth > 500) setIsMobile(false)
+        })
+    }, [])
+
+    const getStyle = (item) => {
+        if (!isMobile) {
+            return {width: (item/7) * 352 + 'px'}
+        } else {
+            return {width: (item/7) * currentWidth * 0.6 + 'px'}
+        }
+    }
+    
     return (
         <div className="horizontal-chart">
             <h1>{title}</h1>
@@ -11,7 +30,7 @@ const HorizontalChart = ({title, data}) => {
                         <div className="label-value" key={index}>
                             <p className="y-tag">{item[0]}</p>
                             <div className="track">
-                                <div style={{width: (item[1]/7) * 352 + 'px'}} className="progress"></div>
+                                <div style={getStyle(item[1])} className="progress"></div>
                             </div>
                         </div>
                     )

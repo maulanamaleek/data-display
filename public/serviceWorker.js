@@ -2,13 +2,16 @@ var cacheVersion = 1;
 var currentCache = {
   offline: 'offline-cache' + cacheVersion
 };
-const offlineUrl = 'offline.html';
+const offlineUrl = '/';
 
 this.addEventListener('install', event => {
   event.waitUntil(
     caches.open(currentCache.offline).then(function(cache) {
       return cache.addAll([
+          '/',
           './logo512.png',
+          './logo192.png',
+          './asset-manifest.json',
           offlineUrl
       ]);
     })

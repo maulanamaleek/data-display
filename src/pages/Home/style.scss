@@ -11,5 +11,9 @@
   .charts-list {
     @include flexRowCenter;
     justify-content: space-between;
+
+    @media (max-width: 500px) {
+      @apply flex-col;
+    }
   }
 }
