@@ -9,7 +9,7 @@
       @apply justify-between mb-2;
     }
     .track {
-      @apply rounded-full relative;
+      @apply rounded-full relative overflow-hidden;
       width: 352px;
       height: 12px;
       background-color: #f7e8e5;
@@ -17,7 +17,8 @@
       .progress {
         @apply bg-secondary rounded-full absolute z-10 left-0 top-0;
         height: 12px;
-        width: 200px;
+        width: 0px;
+        animation: slide linear 0.5s 0.5s;
       }
     }
 
@@ -29,5 +30,14 @@
         @apply text-xs text-primary font-normal;
       }
     }
+  }
+}
+
+@keyframes slide {
+  0% {
+    left: -352px;
+  }
+  100% {
+    left: 0;
   }
 }

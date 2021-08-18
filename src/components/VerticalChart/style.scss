@@ -5,8 +5,16 @@
 
   .chart {
     @include flexRowCenter;
-    @apply ml-5 mb-5 justify-between;
+    @apply ml-5 mb-5 justify-between relative overflow-hidden;
     align-items: flex-end !important;
+
+    .bar-1,
+    .bar-2 {
+      @apply relative bottom-0;
+      height: 0px;
+      animation: slideUp 0.5s 0.5s;
+      transition: all ease 1s;
+    }
 
     .bar-1 {
       @apply rounded-full;
@@ -40,5 +48,14 @@
     .c-2 {
       @apply bg-primary;
     }
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: -176px;
+  }
+  100% {
+    bottom: 0;
   }
 }

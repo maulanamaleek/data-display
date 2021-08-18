@@ -1,0 +1,14 @@
+@import "../../scss/mixins";
+
+.notif-cookie {
+  @include flexRowCenter;
+  @apply fixed top-0 left-0 z-30 bg-grey gap-2;
+  width: 100vw;
+  height: 60px;
+  padding-left: 12.5vw;
+
+  .close-notif {
+    @apply text-base font-semibold cursor-pointer underline;
+    color: #4c9aff;
+  }
+}
