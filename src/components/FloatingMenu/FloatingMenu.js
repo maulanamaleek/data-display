@@ -4,7 +4,7 @@ import DeleteIcon from '../../assets/delete.png'
 import CloseIcon from '../../assets/close.png'
 import './style.scss'
 
-const FloatingMenu = ({selected, isShow, toggle}) => {
+const FloatingMenu = ({selected, isShow, toggle, deleteItem}) => {
 
 
     if (!isShow || !selected ) return null
@@ -16,7 +16,7 @@ const FloatingMenu = ({selected, isShow, toggle}) => {
                 <img src={LabelIcon} alt="label" />
                 Assign Category
             </button>
-            <button className="delete-btn">
+            <button onClick={deleteItem} className="delete-btn">
                 <img src={DeleteIcon} alt="delete" />
                 Delete Table
             </button>

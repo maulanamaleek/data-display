@@ -64,6 +64,7 @@ export default class Home extends Component {
         this.onCheck = this.onCheck.bind(this)
         this.toggleFloatMenu = this.toggleFloatMenu.bind(this)
         this.checkAllTable = this.checkAllTable.bind(this)
+        this.deleteSelected = this.deleteSelected.bind(this)
     }
 
     onCheck(e) {
@@ -94,6 +95,17 @@ export default class Home extends Component {
         this.setState({ showFloatingMenu: !this.state.showFloatingMenu})
     }
 
+    deleteSelected() {
+        const list = document.querySelectorAll('.table-card')
+
+        list.forEach(item => {
+            if (item.childNodes[0].childNodes[0].checked) {
+                item.remove()
+                console.log('checked')
+            }
+        });
+    }
+
     render() {
         const { data_1, data_2, data_3, selected, table, showFloatingMenu} = this.state;
         return (
@@ -105,7 +117,7 @@ export default class Home extends Component {
                     <CircularChart data={data_3} title="Chart 3" />
                 </div>
                 <Table check={this.onCheck} data={table} checkAll={this.checkAllTable} />
-                <FloatingMenu isShow={showFloatingMenu} toggle={this.toggleFloatMenu} selected={selected} />
+                <FloatingMenu deleteItem={this.deleteSelected} isShow={showFloatingMenu} toggle={this.toggleFloatMenu} selected={selected} />
             </div>
         )
     }
